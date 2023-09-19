@@ -1,0 +1,19 @@
+table, th, td {
+    border: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    padding: 5px;
+}
+
+td {
+  padding-right: 10px;
+}
+
+.yesNoTd {
+    text-align: center;
+}
