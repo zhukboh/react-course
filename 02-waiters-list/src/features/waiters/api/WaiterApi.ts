@@ -18,7 +18,7 @@ export class WaiterApi {
     }
 
     static update(waiter: Waiter): Promise<Waiter> {
-        return fetch(URL, {
+        return fetch(URL + '/' + waiter.id, {
             method: 'PUT',
             body: JSON.stringify(waiter),
             headers: {
@@ -28,9 +28,8 @@ export class WaiterApi {
     }
 
     static delete(waiter: Waiter): Promise<Waiter> {
-        return fetch(URL, {
+        return fetch(URL + '/' + waiter.id, {
             method: 'DELETE',
-            body: JSON.stringify(waiter),
             headers: {
                 'Content-Type': 'application/json'
             }

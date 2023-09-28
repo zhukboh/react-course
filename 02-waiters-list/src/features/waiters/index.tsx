@@ -19,10 +19,14 @@ export function WaiterApp() {
         })
     }
 
+    const onRowDelete = (waiter: Waiter) => {
+        WaiterApi.delete(waiter).then(() => setList([...list.filter((item, index) => item != waiter)]))
+    }
+
     return (
         <div>
-            <WaiterFormEdit onWaiterSubmit={onWaiterSubmit} />
-            <WaiterList list={list} />
+            <WaiterFormEdit onWaiterSubmit={onWaiterSubmit}/>
+            <WaiterList list={list} onRowDelete={onRowDelete}/>
         </div>
     );
 }

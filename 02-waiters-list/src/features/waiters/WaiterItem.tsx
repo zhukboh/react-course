@@ -2,9 +2,10 @@ import {Waiter} from "./types";
 
 interface WaiterItemProps {
     waiter: Waiter
+    onRowDelete: (waiter: Waiter) => void
 }
 
-export function WaiterItem({waiter}: WaiterItemProps) {
+export function WaiterItem({waiter, onRowDelete}: WaiterItemProps) {
     return (
         <tr>
             <td>{waiter.id}</td>
@@ -12,7 +13,7 @@ export function WaiterItem({waiter}: WaiterItemProps) {
             <td>{waiter.phone}</td>
             <td>
                 <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={() => onRowDelete(waiter)}>Delete</button>
             </td>
         </tr>
     )

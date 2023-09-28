@@ -3,9 +3,10 @@ import {WaiterItem} from "./WaiterItem";
 
 interface WaiterListProps {
     list: Waiter[];
+    onRowDelete: (waiter: Waiter) => void
 }
 
-export function WaiterList({ list }: WaiterListProps) {
+export function WaiterList({ list, onRowDelete }: WaiterListProps) {
     return (
         <table>
             <thead>
@@ -17,7 +18,7 @@ export function WaiterList({ list }: WaiterListProps) {
             </tr>
             </thead>
             <tbody>
-            {list.map((waiter) => <WaiterItem waiter={waiter} key={waiter.id} />)}
+            {list.map((waiter) => <WaiterItem onRowDelete={onRowDelete} waiter={waiter} key={waiter.id} />)}
             </tbody>
         </table>
     );
